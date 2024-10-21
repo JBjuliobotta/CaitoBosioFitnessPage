@@ -1,4 +1,4 @@
-# Bienvenidos al repositorio FrontEnd de Caito Bossio Coach
+# Bienvenidos al repositorio FrontEnd de Caito Bosio Coach
 
 Aplicación web creada con ReactJs
 
