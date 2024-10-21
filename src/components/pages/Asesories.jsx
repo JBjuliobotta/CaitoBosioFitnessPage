@@ -17,8 +17,15 @@ const Asesories = () => {
 
   return (
     <>
-      <div className=" text-center mb-5 pt-5 bg-black bg-gradient" id="asesorias">
-        <h1>ASESORÍAS PERSONALIZADAS</h1>
+      <div
+        className=" text-center mb-5 pt-5 bg-black bg-gradient"
+        id="asesorias"
+      >
+        <h1 className="mt-5">ASESORÍAS PERSONALIZADAS</h1>
+        <h4 style={{ color: "rgb(160, 160, 160)" }} className="mb-0 pb-0">
+          Las asesorías que doy son todas personalizadas, enfocándose en los
+          resultados que buscan los alumnos.
+        </h4>
       </div>
       <div className="container-main">
         <div className="carousel">
@@ -65,10 +72,6 @@ const Asesories = () => {
           </div>
           <div className="text-center" style={{ color: "rgb(160, 160, 160)" }}>
             <h4 className="py-0 my-0">
-              Las asesorías que doy son todas personalizadas, enfocándose en los
-              resultados que buscan los alumnos.
-            </h4>
-            <h4 className="py-0 my-0">
               Mi experiencia como entrenador físico va desde preparar a un
               plantel superior de jugadores de rugby,
             </h4>
@@ -86,7 +89,7 @@ const Asesories = () => {
             <div className="custom-hr text-center my-5"></div>
           </div>
         </div>
-        <div className="form-title" id="contact">
+        <div className="form-title">
           <h2 className="mx-3">
             ¿Querés una{" "}
             <b style={{ color: "#94c120" }}>asesoría personalizada</b>?{" "}
@@ -97,169 +100,172 @@ const Asesories = () => {
               alt=""
               height={540}
               className="rounded"
-              style={{objectFit: "cover", maxWidth: "100%"}}
+              style={{ objectFit: "cover", maxWidth: "100%" }}
             />
           </div>
-          <h2>Envíame tus datos y voy a responder lo antes posible!</h2>
+          <div className="container text-center mb-5" id="contact">
+            <a
+              href="https://calendly.com/coachcaitobosio/reunion"
+              target="_blank"
+              type="button"
+              className="btn text-light btn-lg contact-btn"
+            >
+              <i className="bi bi-calendar"> </i>AGENDAR LLAMADA
+            </a>
+          </div>
         </div>
-        <div className="form-container">
-          <form
-            action="https://formsubmit.co/coachcaitobosio@gmail.com"
-            method="POST"
-          >
-            <div className="mb-3 mt-2">
-              <label htmlFor="name&lastnameinput" className="form-label">
-                Nombre y Apellido (campo requerido)
-              </label>
+        <div className="container" >
+          <h2 className="text-center">Envíame tus datos y voy a responder lo antes posible!</h2>
+          <div className="form-container">
+            <form
+              action="https://formsubmit.co/coachcaitobosio@gmail.com"
+              method="POST"
+            >
+              <div className="mb-3 mt-2">
+                <label htmlFor="name&lastnameinput" className="form-label">
+                  Nombre y Apellido* (requerido)
+                </label>
+                <input
+                  type="text"
+                  name="Nombre y Apellido"
+                  className="form-control"
+                  id="name&lastnameinput"
+                  minLength={3}
+                  maxLength={50}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="cellphonenumberinput" className="form-label">
+                  Número de contacto* (requerido, incluir código de provincia)
+                </label>
+                <input
+                  type="text"
+                  name="Número de contacto"
+                  className="form-control"
+                  id="cellphonenumberinput"
+                  minLength={4}
+                  maxLength={30}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="emailinput" className="form-label">
+                  Correo electrónico* (requerido)
+                </label>
+                <input
+                  type="email"
+                  name="Correo electrónico"
+                  className="form-control"
+                  id="emailinput"
+                  minLength={10}
+                  maxLength={40}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="ageinput" className="form-label">
+                  Edad* (requerido)
+                </label>
+                <input
+                  type="number"
+                  name="Edad"
+                  className="form-control"
+                  id="ageinput"
+                  min={1}
+                  max={100}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="weightinput" className="form-label">
+                  Peso apróx.* (requerido)
+                </label>
+                <input
+                  type="text"
+                  name="Peso aproximado"
+                  className="form-control"
+                  id="weightinput"
+                  minLength={2}
+                  maxLength={30}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="heightinput" className="form-label">
+                  Altura apróx.* (requerido)
+                </label>
+                <input
+                  type="text"
+                  name="Altura aproximada"
+                  className="form-control"
+                  id="heightinput"
+                  minLength={2}
+                  maxLength={30}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="conditioninput" className="form-label">
+                  Tenés alguna condición o lesión que deba conocer? (campo *
+                  requerido)
+                </label>
+                <input
+                  type="text"
+                  name="Lesión o condición"
+                  className="form-control"
+                  id="conditioninput"
+                  minLength={2}
+                  maxLength={50}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="sportinput" className="form-label">
+                  Hacés algún deporte o disciplina? Competís?* (requerido)
+                </label>
+                <input
+                  type="text"
+                  name="Deporte o disciplina"
+                  className="form-control"
+                  id="sportinput"
+                  minLength={4}
+                  maxLength={50}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="commentsectioninput" className="form-label">
+                  Comentame cuáles son tus objetivos. Te gustaría un seguimiento
+                  nutricional?* (requerido)
+                </label>
+                <textarea
+                  className="form-control"
+                  name="Objetivos y seguimientos"
+                  id="commentsectioninput"
+                  rows="4"
+                  minLength={2}
+                  maxLength={300}
+                  required
+                ></textarea>
+              </div>
+              <input type="hidden" name="_template" value="basic"></input>
               <input
-                type="text"
-                name="Nombre y Apellido"
-                className="form-control"
-                id="name&lastnameinput"
-                placeholder="José Gómez"
-                minLength={3}
-                maxLength={50}
-                required
+                type="hidden"
+                name="_next"
+                value="https://caitobossiocoach.netlify.app/asesories"
               />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="cellphonenumberinput" className="form-label">
-                Número de contacto (campo requerido, incluir código de
-                provincia)
-              </label>
-              <input
-                type="text"
-                name="Número de contacto"
-                className="form-control"
-                id="cellphonenumberinput"
-                placeholder="3816582134"
-                minLength={4}
-                maxLength={30}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="emailinput" className="form-label">
-                Correo electrónico (campo requerido)
-              </label>
-              <input
-                type="email"
-                name="Correo electrónico"
-                className="form-control"
-                id="emailinput"
-                placeholder="tuemail@gmail.com"
-                minLength={10}
-                maxLength={40}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="ageinput" className="form-label">
-                Edad (campo requerido)
-              </label>
-              <input
-                type="number"
-                name="Edad"
-                className="form-control"
-                id="ageinput"
-                placeholder="30"
-                min={1}
-                max={100}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="weightinput" className="form-label">
-                Peso apróx. (campo requerido)
-              </label>
-              <input
-                type="text"
-                name="Peso aproximado"
-                className="form-control"
-                id="weightinput"
-                placeholder="78 kg"
-                minLength={2}
-                maxLength={30}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="heightinput" className="form-label">
-                Altura apróx. (campo requerido)
-              </label>
-              <input
-                type="text"
-                name="Altura aproximada"
-                className="form-control"
-                id="heightinput"
-                placeholder="1,77 m"
-                minLength={2}
-                maxLength={30}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="conditioninput" className="form-label">
-                Tenés alguna condición o lesión que deba conocer? (campo
-                requerido)
-              </label>
-              <input
-                type="text"
-                name="Lesión o condición"
-                className="form-control"
-                id="conditioninput"
-                placeholder="Tengo escoliosis/No tengo ninguna condición"
-                minLength={2}
-                maxLength={50}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="sportinput" className="form-label">
-                Hacés algún deporte o disciplina? Competís? (campo requerido)
-              </label>
-              <input
-                type="text"
-                name="Deporte o disciplina"
-                className="form-control"
-                id="sportinput"
-                placeholder="Jugador de rugby/Ejercicio eventual"
-                minLength={4}
-                maxLength={50}
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="commentsectioninput" className="form-label">
-                Comentame cuáles son tus objetivos. Te gustaría un seguimiento
-                nutricional? (campo requerido)
-              </label>
-              <textarea
-                className="form-control"
-                name="Objetivos y seguimientos"
-                id="commentsectioninput"
-                rows="4"
-                minLength={2}
-                maxLength={300}
-                required
-              ></textarea>
-            </div>
-            <input type="hidden" name="_template" value="basic"></input>
-            <input
-              type="hidden"
-              name="_next"
-              value="https://caitobossiocoach.netlify.app/asesories"
-            />
-            <div className="button-container">
-              <button
-                type="submit"
-                value="Enviar"
-                className="btn btn-light mb-2"
-              >
-                Enviar
-              </button>
-            </div>
-          </form>
+              <div className="button-container">
+                <button
+                  type="submit"
+                  value="Enviar"
+                  className="btn btn-light mb-2"
+                >
+                  Enviar
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </>

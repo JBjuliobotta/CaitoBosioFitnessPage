@@ -1,7 +1,7 @@
-# Bienvenidos al repositorio FrontEnd de Caito Bossio Coach
+# Bienvenidos al repositorio FrontEnd de Caito Bosio Coach
 
 Aplicación web creada con ReactJs
 
 ## Enlace a la versión de producción
 
-- [Caito Bossio Coach | Netlify](https://caitobossiocoach.netlify.app/)
+- [Caito Bosio Coach | Netlify](https://caitobosiocoach.netlify.app/)
