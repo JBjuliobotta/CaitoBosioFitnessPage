@@ -17,9 +17,6 @@ function App() {
       <main className="bg-black text-light">
         <Routes>
           <Route path="/" element={<Home />}/>
-          {/* <Route path="/aboutme" element={<AboutMe />}/> */}
-          {/* <Route path="/asesories" element={<Asesories />}/> */}
-          {/* <Route path="/contactme" element={<ContactMe />}/> */}
         </Routes>
       </main>
 

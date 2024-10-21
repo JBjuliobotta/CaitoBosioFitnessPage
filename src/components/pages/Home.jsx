@@ -25,9 +25,9 @@ const Home = () => {
         <iframe
           width="960"
           height="540"
-          src="https://www.youtube.com/embed/vJyyvW-7chQ?autoplay=1&mute=1"
+          src="https://www.youtube.com/embed/3vE_H7e-s48?autoplay=1&mute=1"
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
           className="rounded"
         ></iframe>
       </div>
@@ -43,7 +43,7 @@ const Home = () => {
       </div>
       <div id="method">
         <div className="text-center bg-black bg-gradient pt-5">
-          <h1 className="mb-4">
+          <h1 className="mb-4 mt-5">
             CONOCE EL MÉTODO{" "}
             <b style={{ color: "#94c120" }}>&quot;FITNESS DEVELOP&quot;</b>
           </h1>
@@ -170,13 +170,7 @@ const Home = () => {
       <div>
         <Asesories />
       </div>
-      <a
-        href="https://wa.me/5493816755376"
-        target="_blank"
-        className="btn-success whatsapp-btn"
-      >
-        <i className="bi bi-whatsapp"></i>
-      </a>
+     
     </>
   );
 };

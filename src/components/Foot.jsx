@@ -74,6 +74,13 @@ const Foot = () => {
           </p>
         </div>
       </div>
+      <a
+        href="https://wa.me/5493816755376"
+        target="_blank"
+        className="btn-success whatsapp-btn"
+      >
+        <i className="bi bi-whatsapp"></i>
+      </a>
     </div>
   );
 };
