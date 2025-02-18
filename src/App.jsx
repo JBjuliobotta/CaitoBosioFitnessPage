@@ -13,13 +13,11 @@ function App() {
       <header>
         <NavBar />
       </header>
-
       <main className="bg-black text-light">
         <Routes>
-          <Route path="/" element={<Home />}/>
+          <Route path="/" element={<Home />} />
         </Routes>
       </main>
-
       <footer>
         <Foot />
       </footer>
