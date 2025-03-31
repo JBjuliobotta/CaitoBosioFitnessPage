@@ -13,8 +13,7 @@ const Home = () => {
           <b style={{ color: "#94c120" }}>Caito Bosio</b> | Entrenador Coach
         </h6>
         <h1>
-          Logro que profesionales +30 años obtengan un cuerpo atlético
-          entrenando efectivamente en 90 días
+        Logra un cuerpo atlético con entrenamientos efectivos en solo 90 días 
         </h1>
         <h6 className="mt-3" style={{ color: "rgb(160, 160, 160)" }}>
           (Sin necesidad de tener experiencia previa en entrenamientos ni de
