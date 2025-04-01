@@ -114,153 +114,88 @@ const Asesories = () => {
             </a>
           </div>
         </div>
-        <div className="container" >
-          <h2 className="text-center">Envíame tus datos y voy a responder lo antes posible!</h2>
+        <div className="container">
+          <h2 className="text-center">
+            Envíame tus datos y voy a responder lo antes posible!
+          </h2>
           <div className="form-container">
             <form
-              action="https://formsubmit.co/coachcaitobosio@gmail.com"
+              action="https://formsubmit.co/nachsalas93@gmail.com"
               method="POST"
             >
               <div className="mb-3 mt-2">
-                <label htmlFor="name&lastnameinput" className="form-label">
+                <label htmlFor="name-lastname-input" className="form-label">
                   Nombre y Apellido* (requerido)
                 </label>
                 <input
                   type="text"
                   name="Nombre y Apellido"
                   className="form-control"
-                  id="name&lastnameinput"
+                  id="name-lastname-input"
                   minLength={3}
                   maxLength={50}
+                  pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+"
                   required
+                  autoComplete="name"
                 />
               </div>
+
               <div className="mb-3">
-                <label htmlFor="cellphonenumberinput" className="form-label">
+                <label htmlFor="phone-input" className="form-label">
                   Número de contacto* (requerido, incluir código de provincia)
                 </label>
                 <input
-                  type="text"
+                  type="tel"
                   name="Número de contacto"
                   className="form-control"
-                  id="cellphonenumberinput"
+                  id="phone-input"
                   minLength={4}
                   maxLength={30}
+                  pattern="[0-9+\s]+"
                   required
+                  autoComplete="tel"
                 />
               </div>
+
               <div className="mb-3">
-                <label htmlFor="emailinput" className="form-label">
+                <label htmlFor="email-input" className="form-label">
                   Correo electrónico* (requerido)
                 </label>
                 <input
                   type="email"
-                  name="Correo electrónico"
+                  name="email"
                   className="form-control"
-                  id="emailinput"
+                  id="email-input"
                   minLength={10}
                   maxLength={40}
                   required
+                  autoComplete="email"
                 />
               </div>
-              <div className="mb-3">
-                <label htmlFor="ageinput" className="form-label">
-                  Edad* (requerido)
-                </label>
-                <input
-                  type="number"
-                  name="Edad"
-                  className="form-control"
-                  id="ageinput"
-                  min={1}
-                  max={100}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="weightinput" className="form-label">
-                  Peso apróx.* (requerido)
-                </label>
-                <input
-                  type="text"
-                  name="Peso aproximado"
-                  className="form-control"
-                  id="weightinput"
-                  minLength={2}
-                  maxLength={30}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="heightinput" className="form-label">
-                  Altura apróx.* (requerido)
-                </label>
-                <input
-                  type="text"
-                  name="Altura aproximada"
-                  className="form-control"
-                  id="heightinput"
-                  minLength={2}
-                  maxLength={30}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="conditioninput" className="form-label">
-                  Tenés alguna condición o lesión que deba conocer? (campo *
-                  requerido)
-                </label>
-                <input
-                  type="text"
-                  name="Lesión o condición"
-                  className="form-control"
-                  id="conditioninput"
-                  minLength={2}
-                  maxLength={50}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="sportinput" className="form-label">
-                  Hacés algún deporte o disciplina? Competís?* (requerido)
-                </label>
-                <input
-                  type="text"
-                  name="Deporte o disciplina"
-                  className="form-control"
-                  id="sportinput"
-                  minLength={4}
-                  maxLength={50}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="commentsectioninput" className="form-label">
-                  Comentame cuáles son tus objetivos. Te gustaría un seguimiento
-                  nutricional?* (requerido)
-                </label>
-                <textarea
-                  className="form-control"
-                  name="Objetivos y seguimientos"
-                  id="commentsectioninput"
-                  rows="4"
-                  minLength={2}
-                  maxLength={300}
-                  required
-                ></textarea>
-              </div>
-              <input type="hidden" name="_template" value="basic"></input>
+
+              {/* FORMSUBIT CONFIGURATION */}
+
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="¡Solicitud de Asesoría recibida! Te estaré contactando dentro de las proximas 24 hs - Coach Caito Bosio"
+              />
+
+              <input type="hidden" name="_template" value="basic" />
               <input
                 type="hidden"
                 name="_next"
                 value="https://caitobossiocoach.netlify.app/asesories"
               />
+
+              <input
+                type="hidden"
+                name="_subject"
+                value="NUEVA SOLICITUD DE ASESORIA RECIBIDA - CAITOBOSIOCOACH WEB"
+              />
+
               <div className="button-container">
-                <button
-                  type="submit"
-                  value="Enviar"
-                  className="btn btn-light mb-2"
-                >
+                <button type="submit" className="btn btn-light mb-2">
                   Enviar
                 </button>
               </div>
