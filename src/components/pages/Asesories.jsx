@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "../css/asesories.css";
 import { carouselImages } from "../../helpers/carouseldata";
 import ContactImage from "/src/assets/_MG_9509.jpg";
+import CalendlyWidget from "../Calendly";
 
 const Asesories = () => {
   const [currentImg, setCurrentImg] = useState(0);
@@ -113,6 +114,9 @@ const Asesories = () => {
               <i className="bi bi-calendar"> </i>AGENDAR LLAMADA
             </a>
           </div>
+        </div>
+        <div className="container mb-5">
+          <CalendlyWidget />
         </div>
         <div className="container">
           <h2 className="text-center">
