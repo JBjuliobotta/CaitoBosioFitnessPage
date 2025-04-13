@@ -124,7 +124,7 @@ const Asesories = () => {
           </h2>
           <div className="form-container">
             <form
-              action="https://formsubmit.co/nachsalas93@gmail.com"
+              action="https://formsubmit.co/coachcaitobosio@gmail.com"
               method="POST"
             >
               <div className="mb-3 mt-2">
