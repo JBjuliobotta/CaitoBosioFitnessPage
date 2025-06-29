@@ -38,7 +38,7 @@ const Foot = () => {
             </li>
             <li className="me-3 mx-2">
               <a
-                href="https://www.instagram.com/caito.bosio?igsh=czlxcGVwN3V3dDJw"
+                href="https://www.instagram.com/caitobosio"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: "black" }}
