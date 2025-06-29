@@ -1,8 +1,8 @@
 // import React from "react";
 import "../css/aboutme.css";
-import BackgroundAbout1 from "/src/assets/_MG_9204.jpg";
-import BackgroundAbout2 from "/src/assets/_MG_9106.jpg";
-import BackgroundAbout3 from "/src/assets/_MG_9613.jpg";
+import BackgroundAbout1 from "/src/assets/_MG_9204.webp";
+import BackgroundAbout2 from "/src/assets/_MG_9106.webp";
+import BackgroundAbout3 from "/src/assets/_MG_9613.webp";
 
 const AboutMe = () => {
   return (

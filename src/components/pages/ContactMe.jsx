@@ -1,6 +1,6 @@
 // import React from "react";
 import "../css/contact.css";
-import ContactImage from "/src/assets/_MG_9509.jpg";
+import ContactImage from "/src/assets/_MG_9509.webp";
 import { Link } from "react-router-dom";
 
 const ContactMe = () => {
