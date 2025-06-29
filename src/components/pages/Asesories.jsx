@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "../css/asesories.css";
 import { carouselImages } from "../../helpers/carouseldata";
-import ContactImage from "/src/assets/_MG_9509.jpg";
+import ContactImage from "/src/assets/_MG_9509.webp";
 import CalendlyWidget from "../Calendly";
 
 const Asesories = () => {

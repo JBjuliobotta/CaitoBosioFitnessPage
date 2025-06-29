@@ -1,8 +1,8 @@
-import FuerzayPotencia from "../assets/_MG_9104.jpg"
-import RendimientoDeportivo from "../assets/_MG_9839.jpg"
-import Funcional from "../assets/_MG_9626.jpg"
-import Musculacion from "../assets/_MG_9678.jpg"
-import SaludyBienestar from "../assets/_MG_9558.jpg"
+import FuerzayPotencia from "../assets/MG_9104.webp"
+import RendimientoDeportivo from "../assets/MG_9839.webp"
+import Funcional from "../assets/MG_9626.webp"
+import Musculacion from "../assets/MG_9678.webp"
+import SaludyBienestar from "../assets/MG_9558.webp"
 
 export const carouselImages = [
     {title: "Fuerza y Potencia", img: FuerzayPotencia},

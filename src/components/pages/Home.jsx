@@ -1,9 +1,9 @@
 import "../css/home.css";
 import AboutMe from "./AboutMe";
 import Asesories from "./Asesories";
-import CardImage1 from "/src/assets/_MG_9566.jpg";
-import CardImage2 from "/src/assets/_MG_9297.jpg";
-import CardImage3 from "/src/assets/_MG_9493.jpg";
+import CardImage1 from "/src/assets/MG_9566.webp";
+import CardImage2 from "/src/assets/MG_9297.webp";
+import CardImage3 from "/src/assets/_MG_9493.webp";
 
 const Home = () => {
   // Función para tracking de eventos
