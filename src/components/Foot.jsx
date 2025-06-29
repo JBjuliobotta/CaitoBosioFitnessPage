@@ -27,41 +27,43 @@ const Foot = () => {
           <h4 className="text-center">Contacto</h4>
           <ul className="list-unstyled d-flex justify-content-center">
             <li className="me-3 mx-2">
-              <Link
-                to="https://www.facebook.com/kito.caobosio?mibextid=ZbWKwL"
+              <a
+                href="https://www.facebook.com/kito.caobosio?mibextid=ZbWKwL"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ color: "black" }}
-                onClick={handleScrollToTop}
               >
                 <i className="bi bi-facebook" />
-              </Link>
+              </a>
             </li>
             <li className="me-3 mx-2">
-              <Link
-                to="https://www.instagram.com/caito.bosio?igsh=czlxcGVwN3V3dDJw"
+              <a
+                href="https://www.instagram.com/caito.bosio?igsh=czlxcGVwN3V3dDJw"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ color: "black" }}
-                onClick={handleScrollToTop}
               >
                 <i className="bi bi-instagram" />
-              </Link>
+              </a>
             </li>
 
             <li className="me-3 mx-2">
-              <Link
-                to="https://wa.me/+5493816755376"
+              <a
+                href="https://wa.me/+5493816755376"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ color: "black" }}
-                onClick={handleScrollToTop}
               >
                 <i className="bi bi-whatsapp" />
-              </Link>
+              </a>
             </li>
             <li className="me-3 mx-2">
-              <Link
-                to="mailto:coachcaitobosio@gmail.com"
+              <a
+                href="mailto:coachcaitobosio@gmail.com"
                 style={{ color: "black" }}
-                onClick={handleScrollToTop}
               >
                 <i className="bi bi-envelope-at-fill" />
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -70,13 +72,14 @@ const Foot = () => {
       <div className="row">
         <div className="col text-center">
           <p className="text-muted my-3 mb-0">
-            &copy; Todos los derechos reservados - Ignacio Salas & Julio Rafael Botta
+            &copy; Todos los derechos reservados - Ignacio Salas - 2025
           </p>
         </div>
       </div>
       <a
         href="https://wa.me/5493816755376"
         target="_blank"
+        rel="noopener noreferrer"
         className="btn-success whatsapp-btn"
       >
         <i className="bi bi-whatsapp"></i>

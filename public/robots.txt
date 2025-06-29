@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://caitobossiocoach.netlify.app/sitemap.xml 

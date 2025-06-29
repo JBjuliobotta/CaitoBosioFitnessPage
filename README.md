@@ -5,3 +5,7 @@ Aplicación web creada con ReactJs
 ## Enlace a la versión de producción
 
 - [Caito Bosio Coach | Netlify](https://caitobosiocoach.netlify.app/)
+
+## Comandos
+Levantar aplicacion:
+npm run dev 

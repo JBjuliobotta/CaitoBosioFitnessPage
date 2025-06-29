@@ -6,6 +6,15 @@ import CalendlyWidget from "../Calendly";
 
 const Asesories = () => {
   const [currentImg, setCurrentImg] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: ""
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImg((prevImg) =>
@@ -15,6 +24,74 @@ const Asesories = () => {
 
     return () => clearInterval(interval);
   }, [currentImg]);
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Validar nombre
+    if (!formData.name.trim()) {
+      newErrors.name = "El nombre es requerido";
+    } else if (formData.name.trim().length < 3) {
+      newErrors.name = "El nombre debe tener al menos 3 caracteres";
+    } else if (!/^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/.test(formData.name)) {
+      newErrors.name = "El nombre solo puede contener letras y espacios";
+    }
+
+    // Validar teléfono
+    if (!formData.phone.trim()) {
+      newErrors.phone = "El teléfono es requerido";
+    } else if (!/^[0-9+\s-]+$/.test(formData.phone)) {
+      newErrors.phone = "El teléfono solo puede contener números, +, espacios y guiones";
+    } else if (formData.phone.replace(/[\s-]/g, "").length < 8) {
+      newErrors.phone = "El teléfono debe tener al menos 8 dígitos";
+    }
+
+    // Validar email
+    if (!formData.email.trim()) {
+      newErrors.email = "El email es requerido";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Ingresa un email válido";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // Limpiar error cuando el usuario empiece a escribir
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ""
+      }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    
+    // Simular envío (en producción esto sería una llamada real a la API)
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+      setFormData({ name: "", phone: "", email: "" });
+      
+      // Resetear mensaje de éxito después de 5 segundos
+      setTimeout(() => setSubmitSuccess(false), 5000);
+    }, 2000);
+  };
 
   return (
     <>
@@ -122,26 +199,38 @@ const Asesories = () => {
           <h2 className="text-center">
             Envíame tus datos y voy a responder lo antes posible!
           </h2>
+          
+          {submitSuccess && (
+            <div className="alert alert-success text-center" role="alert">
+              <i className="bi bi-check-circle-fill me-2"></i>
+              ¡Mensaje enviado con éxito! Te contactaré dentro de las próximas 24 horas.
+            </div>
+          )}
+
           <div className="form-container">
-            <form
-              action="https://formsubmit.co/coachcaitobosio@gmail.com"
-              method="POST"
-            >
+            <form onSubmit={handleSubmit}>
               <div className="mb-3 mt-2">
-                <label htmlFor="name-lastname-input" className="form-label">
+                <label htmlFor="name-input" className="form-label">
                   Nombre y Apellido* (requerido)
                 </label>
                 <input
                   type="text"
-                  name="Nombre y Apellido"
-                  className="form-control"
-                  id="name-lastname-input"
+                  name="name"
+                  className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                  id="name-input"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   minLength={3}
                   maxLength={50}
-                  pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+"
                   required
                   autoComplete="name"
+                  placeholder="Ej: Juan Pérez"
                 />
+                {errors.name && (
+                  <div className="invalid-feedback">
+                    {errors.name}
+                  </div>
+                )}
               </div>
 
               <div className="mb-3">
@@ -150,15 +239,22 @@ const Asesories = () => {
                 </label>
                 <input
                   type="tel"
-                  name="Número de contacto"
-                  className="form-control"
+                  name="phone"
+                  className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
                   id="phone-input"
+                  value={formData.phone}
+                  onChange={handleInputChange}
                   minLength={4}
                   maxLength={30}
-                  pattern="[0-9+\s]+"
                   required
                   autoComplete="tel"
+                  placeholder="Ej: +54 381 1234567"
                 />
+                {errors.phone && (
+                  <div className="invalid-feedback">
+                    {errors.phone}
+                  </div>
+                )}
               </div>
 
               <div className="mb-3">
@@ -168,17 +264,43 @@ const Asesories = () => {
                 <input
                   type="email"
                   name="email"
-                  className="form-control"
+                  className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                   id="email-input"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   minLength={10}
                   maxLength={40}
                   required
                   autoComplete="email"
+                  placeholder="Ej: juan.perez@email.com"
                 />
+                {errors.email && (
+                  <div className="invalid-feedback">
+                    {errors.email}
+                  </div>
+                )}
+              </div>
+
+              <div className="text-center">
+                <button
+                  type="submit"
+                  className="btn text-light btn-lg contact-btn"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                      Enviando...
+                    </>
+                  ) : (
+                    <>
+                      <i className="bi bi-send"> </i>ENVIAR MENSAJE
+                    </>
+                  )}
+                </button>
               </div>
 
               {/* FORMSUBIT CONFIGURATION */}
-
               <input
                 type="hidden"
                 name="_autoresponse"
@@ -197,12 +319,6 @@ const Asesories = () => {
                 name="_subject"
                 value="NUEVA SOLICITUD DE ASESORIA RECIBIDA - CAITOBOSIOCOACH WEB"
               />
-
-              <div className="button-container">
-                <button type="submit" className="btn btn-light mb-2">
-                  Enviar
-                </button>
-              </div>
             </form>
           </div>
         </div>

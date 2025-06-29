@@ -6,6 +6,20 @@ import CardImage2 from "/src/assets/_MG_9297.jpg";
 import CardImage3 from "/src/assets/_MG_9493.jpg";
 
 const Home = () => {
+  // Función para tracking de eventos
+  const trackEvent = (action, label) => {
+    try {
+      if (window.gtag) {
+        window.gtag('event', action, {
+          event_category: 'engagement',
+          event_label: label
+        });
+      }
+    } catch (error) {
+      console.log('Google Analytics no disponible');
+    }
+  };
+
   return (
     <>
       <div className="container text-center mt-5 pt-5" id="index">
@@ -28,14 +42,18 @@ const Home = () => {
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           className="rounded"
+          title="Video presentación Caito Bosio"
+          loading="lazy"
         ></iframe>
       </div>
       <div className="container text-center mb-5">
         <a
           href="https://calendly.com/coachcaitobosio/reunion"
           target="_blank"
+          rel="noopener noreferrer"
           type="button"
           className="btn text-light btn-lg contact-btn"
+          onClick={() => trackEvent('click', 'agendar_llamada_hero')}
         >
           <i className="bi bi-calendar"> </i>AGENDAR LLAMADA
         </a>
@@ -70,10 +88,11 @@ const Home = () => {
             <div className="col-md-6 text-center">
               <img
                 src={CardImage1}
-                alt=""
+                alt="Caito Bosio realizando análisis de entrenamiento personalizado"
                 height={540}
                 style={{objectFit: "cover", maxWidth: "100%"}}
                 className="rounded mx-1 mb-5"
+                loading="lazy"
               />
             </div>
             <div className="col-md-6 bg-black bg-gradient rounded">
@@ -95,10 +114,11 @@ const Home = () => {
             <div className="col-md-6 text-center order-md-2">
               <img
                 src={CardImage2}
-                alt=""
+                alt="Caito Bosio ejecutando ejercicios de entrenamiento"
                 height={540}
                 style={{objectFit: "cover", maxWidth: "100%"}}
                 className="rounded mx-1 my-5"
+                loading="lazy"
               />
             </div>
             <div className="col-md-6 order-md-1 bg-black bg-gradient rounded">
@@ -121,11 +141,12 @@ const Home = () => {
              <div className="container">
              <img
                 src={CardImage3}
-                alt=""
+                alt="Caito Bosio ajustando plan de entrenamiento personalizado"
                 height={540}
                 width={360}
                 style={{objectFit: "cover", maxWidth: "100%"}}
                 className="rounded my-5"
+                loading="lazy"
               />
              </div>
             </div>
@@ -156,8 +177,10 @@ const Home = () => {
           <a
             href="https://calendly.com/coachcaitobosio/reunion"
             target="_blank"
+            rel="noopener noreferrer"
             type="button"
             className="btn text-light btn-lg contact-btn"
+            onClick={() => trackEvent('click', 'agendar_llamada_final')}
           >
             <i className="bi bi-calendar"> </i>AGENDAR LLAMADA
           </a>
