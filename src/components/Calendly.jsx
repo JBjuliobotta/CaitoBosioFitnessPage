@@ -16,7 +16,7 @@ const CalendlyWidget = () => {
     <div style={{ width: "100%", height: "100vh", overflow: "hidden" }}>
       <div
         className="calendly-inline-widget"
-        data-url="https://calendly.com/coachcaitobosio/reunion"
+        data-url="https://calendly.com/nachsalas93/30min"
         style={{ width: "100%", height: "100%", border: "none" }}
       ></div>
     </div>
