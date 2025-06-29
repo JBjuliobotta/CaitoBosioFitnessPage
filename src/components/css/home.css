@@ -39,6 +39,82 @@ body {
   font-weight: 700;
 }
 
+/* Mejorar contraste para texto gris */
+.text-muted, 
+h6[style*="color: rgb(160, 160, 160)"],
+h4[style*="color: rgb(160, 160, 160)"] {
+  color: #a0a0a0 !important; /* Gris más oscuro para mejor contraste */
+}
+
+/* Focus indicators para accesibilidad */
+.btn:focus,
+.form-control:focus,
+.nav-link:focus {
+  outline: 2px solid #94c120 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 0.2rem rgba(148, 193, 32, 0.25) !important;
+}
+
+/* Mejorar contraste de botones */
+.contact-btn {
+  background-color: #94c120 !important;
+  border-color: #94c120 !important;
+  color: #000 !important; /* Texto negro para mejor contraste */
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.contact-btn:hover {
+  background-color: #7da01a !important;
+  border-color: #7da01a !important;
+  color: #000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+
+.contact-btn:disabled {
+  background-color: #6c757d !important;
+  border-color: #6c757d !important;
+  opacity: 0.65 !important;
+}
+
+/* Estilos para formulario mejorado */
+.form-control.is-invalid {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.invalid-feedback {
+  color: #dc3545 !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.25rem !important;
+}
+
+.alert-success {
+  background-color: #d4edda !important;
+  border-color: #c3e6cb !important;
+  color: #155724 !important;
+}
+
+/* Loading spinner */
+.spinner-border-sm {
+  width: 1rem !important;
+  height: 1rem !important;
+}
+
+/* Mejorar contraste de navegación */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #94c120 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #94c120 !important;
+}
+
 .title-phrase:first-of-type {
   animation: showup 7s infinite;
 }
@@ -199,7 +275,6 @@ body {
     white-space: wrap;
     -webkit-text-stroke: 2px rgb(82, 82, 82);
   }
-
   .description-phrase {
     text-align: center;
     align-content: center;
@@ -209,44 +284,11 @@ body {
     font-weight: bold;
     font-size: 25px;
   }
-
       .logos-slider img {
-        height: 150px;
-    }
+        height: 200px;
+      }
 }
-
 @media (max-width: 767px) {
-  .title-phrase {
-    text-align: center;
-    align-content: center;
-    margin-top: 100px;
-    margin-left: 16px;
-    text-transform: uppercase;
-    color: transparent;
-    font-weight: 400;
-    font-size: 40px !important;
-    display: inline-block;
-    overflow: hidden;
-    white-space: wrap;
-    -webkit-text-stroke: 2px rgb(82, 82, 82);
-  }
-
-  .description-phrase {
-    text-align: center;
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    font-weight: bold;
-    font-size: 20px;
-  }
-
-      .logos-slider img {
-        height: 100px;
-    }
-}
-
-@media (max-width: 480px) {
   .title-phrase {
     text-align: center;
     align-content: center;
@@ -259,9 +301,8 @@ body {
     display: inline-block;
     overflow: hidden;
     white-space: wrap;
-    -webkit-text-stroke: 2px rgb(82, 82, 82);
+    -webkit-text-stroke: 1px rgb(82, 82, 82);
   }
-
   .description-phrase {
     text-align: center;
     align-content: center;
@@ -269,78 +310,97 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 18px;
   }
-
-  .card-title {
+      .logos-slider img {
+        height: 150px;
+      }
+}
+@media (max-width: 480px) {
+  .title-phrase {
+    text-align: center;
+    align-content: center;
+    margin-top: 100px;
+    margin-left: 16px;
     text-transform: uppercase;
-    font-size: 25px;
-     font-family: "Oswald", Helvetica, sans-serif !important;
-    font-style: normal;
-    font-weight: 500;
-    color: #fff !important;
-  }
-
-  .card-info {
-    font-size: 13px;
-    line-height: 25px;
-    margin: 40px 0;
+    color: transparent;
     font-weight: 400;
-    color: #fff;
-        font-family: "Open Sans", Helvetica, sans-serif;
-    font-weight: 700;
-    font-style: normal;
+    font-size: 25px !important;
+    display: inline-block;
+    overflow: hidden;
+    white-space: wrap;
+    -webkit-text-stroke: 1px rgb(82, 82, 82);
   }
-
+  .description-phrase {
+    text-align: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  .card-title {
+    font-size: 30px;
+  }
+  .card-info {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 20px 0;
+  }
     .logos-slider img {
-        height: 100px;
+      height: 100px;
     }
 }
 
-/* Boton de Whatsapp */
 body {
-  height: 1500px; /* Solo para simular una página larga */
+  margin: 0;
+  padding: 0;
 }
 
 .whatsapp-btn {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25d366!important;
-  color: white!important;
-  font-size: 1.92rem!important;
-  padding: 10px 20px;
-  border-radius: 100%!important;
-  text-decoration: none;
-  z-index: 1000 !important;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 65px;
-  width: 65px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .whatsapp-btn:hover {
-  background-color: #128c7e!important;
+  background-color: #128c7e;
+  transform: scale(1.1);
+  color: white;
 }
 
 .contact-btn{
-  background-color: #94c120 !important;
-  font-family: "Oswald", Helvetica, sans-serif !important;;   
+  background-color: #94c120;
+  border-color: #94c120;
 }
 
 .contact-btn:hover {
-  background-color: #b3e252 !important;
+  background-color: #7da01a;
+  border-color: #7da01a;
 }
 
 .img-method {
-  border-radius: 25%;
+  object-fit: cover;
 }
 
 .custom-hr {
-  width: 50%;         
-  height: 2px;          
-  background-color: #ccc; 
-  border: none;         
-  margin: 20px 0;    
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #94c120, transparent);
+  margin: 2rem 0;
 }
